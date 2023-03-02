@@ -1,3 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin');
 
+:root {
+    --primary-blue: hsl(223, 87%, 63%);
+    --primary-lessBlue: hsla(223, 87%, 63%, 0.8);
+
+    --secondary-paleBlue: hsl(223, 100%, 88%);
+    --secondary-lightRed: hsl(354, 100%, 66%);
+    --secondary-paleLightRed: hsla(354, 100%, 66%, 0.5);
+
+    --neutral-gray: hsl(0, 0%, 59%);
+    --neutral-veryDarkBlue: hsl(209, 33%, 12%);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: white;
+    display: grid;
+    place-items: center;
+}
+
+    main {
+        width: 80%;
+        max-width: 768px;
+        font-family: 'Libre Franklin', sans-serif;
+        display: flex;
+        flex-direction: column;
+        padding-block: 4rem;
+    }
+        #logo {
+            width: 20%;
+            max-width: 5rem;
+            align-self: center;
+        }
+        #dashboard {
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+
+        .header {
+            margin-block-end: 2rem;
+        }
+
+        .comingSoon {
+            text-align: center;
+            margin-block-end: 2rem;
+        }
+            .comingSoon h1 {
+                font-size: 3rem;
+                color: var(--neutral-gray);
+                font-weight: 300;
+                margin-block-end: 0;
+            }
+                .comingSoon h1 span {
+                    color: var(--neutral-veryDarkBlue);
+                    font-weight: 700;
+                }
+
+        form {
+            display: flex;
+            justify-content: space-between;
+        }
+            form div {
+                position: relative;
+                width: 75%;
+                padding-block-end: 2rem;
+            }
+                form div input {
+                    font-family: 'Libre Franklin', sans-serif;
+                    padding: 1rem 2rem;
+                    width: calc(100% - 4rem);
+                    border-radius: 2rem;
+                    border-width: 0;
+                    outline: var(--secondary-paleBlue);
+                    outline-width: 0.05rem;
+                    outline-style: solid;
+                }
+                    form div input::placeholder {
+                        color: var(--secondary-paleBlue);
+                    }
+                    form div input:focus {
+                        outline-width: 0.2rem;
+                    }
+
+                    .inputError::placeholder {
+                        color: var(--secondary-paleLightRed);
+                    }
+
+                form div p {
+                    display: none;
+                    position: absolute;
+                    bottom: 0.5rem;
+                    left: 2rem;
+                    color: var(--secondary-lightRed);
+                    font-size: 0.75rem;
+                    margin-block-end: 0;
+                }
+            form button {
+                font-family: 'Libre Franklin', sans-serif;
+                padding: 1rem 3rem;
+                height: 3rem;
+                border-radius: 2rem;
+                background-color: var(--primary-blue);
+                color: white;
+                border: none;
+            }
+                form button:hover {
+                    cursor: pointer;
+                    background-color: var(--primary-lessBlue);
+                }
+
+        .socialMedias {
+            align-self: center;
+            width: 50%;
+            max-width: 9rem;
+            display: flex;
+            justify-content: space-between;
+            margin-block-end: 2rem;
+        }
+            .socialMedias div {
+                padding: 0.5rem;
+                border-width: 0.05rem;
+                border-radius: 50%;
+                border-color: var(--neutral-gray);
+                border-style: solid;
+                width: 15%;
+                aspect-ratio: 1 / 1;
+                max-width: 9rem;
+                background-size: 50%;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+                #facebook {
+                    background-image: url(./images/facebook.png);
+                }
+                #instagram {
+                    background-image: url(./images/instagram.png);
+                }
+                #twitter {
+                    background-image: url(./images/twitter.png);
+                }
+
+                .socialMedias div:hover {
+                    cursor: pointer;
+                    border-color: var(--primary-blue);
+                    background-color: var(--primary-blue);
+                }
+                    .socialMedias #facebook:hover {
+                        background-image: url(./images/facebook_hover.png) !important;
+                    }
+                    .socialMedias #instagram:hover {
+                        background-image: url(./images/instagram_hover.png) !important;
+                    }
+                    .socialMedias #twitter:hover {
+                        background-image: url(./images/twitter_hover.png) !important;
+                    }
+
+        small {
+            align-self: center;
+            color: var(--neutral-gray)
+        }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 2rem;
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-aspect-ratio: 1) {
+    .comingSoon h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+        form div {
+            width: 100%;
+            padding: 0;
+            margin-block-end: 1rem;
+        }
+            form div p {
+                position: static;
+                text-align: center;
+                font-style: italic;
+            }
+
+    footer {
+        position: static;
+    }
+}
